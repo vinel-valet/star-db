@@ -16,7 +16,6 @@ import PersonDetails from "../sw-components/person-details";
 const App = () => {
 
   const swapiService = new SwapiService()
-  const [itemId, setItemId] = useState(null)
 
   return (
     <ErrorBoundry>
@@ -28,20 +27,11 @@ const App = () => {
 
           <Routes>
             <Route path="/people/*" element={<PeoplePage/>}/>
-            <Route path="/people/:id" element={<PeoplePage
-              itemId={itemId}
-              funcPerson={setItemId}
-            />}/>
+            <Route path="/people/:id" element={<PeoplePage/>}/>
             <Route path="/planets/*" element={<PlanetsPage/>}/>
-            <Route path="/planets/:id" element={<PlanetsPage
-              itemId={itemId}
-              funcPlanet={setItemId}
-            />}/>
+            <Route path="/planets/:id" element={<PlanetsPage/>}/>
             <Route path="/starships/*" element={<StarshipsPage/>}/>
-            <Route path="/starships/:id" element={<StarshipsPage
-              itemId={itemId}
-              func={setItemId}
-            />}/>
+            <Route path="/starships/:id" element={<StarshipsPage/>}/>
           </Routes>
 
         </div>

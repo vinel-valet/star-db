@@ -11,7 +11,7 @@ const PeoplePage = () => {
 
   return (
     <Row
-      left={<PersonList onItemSelected={(id) => navigate(`/people/${id}`)} />}
+      left={<PersonList onItemSelected={(itemId) => navigate(`/people/${itemId}`)} />}
       right={<PersonDetails itemId={id} />}
     />
   );
