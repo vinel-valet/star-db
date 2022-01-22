@@ -1,38 +1,44 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import withData from '../hoc-helpers/with-data';
+import SwapiService from '../../services/swapi-service';
 import './item-list.css';
-import Spinner from "../spinner/spinner";
 
-const ItemList = ({onItemSelected, getData}) => {
+const ItemList = (props) => {
 
-  const [itemList, setPeopleList] = useState(null);
+  const { data, onItemSelected, children: renderLabel } = props;
 
+  const items = data.map((item) => {
+    const { id } = item;
+    const label = renderLabel(item);
 
-  useEffect(() => {
-
-    getData()
-      .then((itemList) => {
-        setPeopleList(itemList)
-      })
-  }, [])
-
-  const renderPeopleList = () => (
-    <ul className="item-list list-group">
-      {itemList.map(({id, name}) => (
-          <li className="list-group-item"
-              key={id}
-              onClick={() => onItemSelected(id)}>
-            {name}
-          </li>
-        )
-      )}
-    </ul>
-  );
-
+    return (
+      <li className="list-group-item"
+          key={id}
+          onClick={() => onItemSelected(id)}>
+        {label}
+      </li>
+    );
+  });
 
   return (
-    <>
-      {!itemList ? <Spinner/> : renderPeopleList()}
-    </>
-  )
+    <ul className="item-list list-group">
+      {items}
+    </ul>
+  );
 };
-export default ItemList;
+
+ItemList.defaultProps = {
+  onItemSelected: () => {}
+};
+
+ItemList.propTypes = {
+  onItemSelected: PropTypes.func,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  children: PropTypes.func.isRequired
+};
+
+const { getAllPeople } = new SwapiService();
+
+export default withData(ItemList, getAllPeople);

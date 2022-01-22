@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     padding: 1rem;
+    border: 1px solid #444;
     margin-top: 1.5rem;
 }
 
@@ -15,6 +16,10 @@
     padding: .25rem;
 }
 
-.item-details .list-group-item .term {
+.item-details .list-group-item .term{
     margin-right: .5rem;
+}
+
+.item-details button {
+    margin-top: 5px;
 }
