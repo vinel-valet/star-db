@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from '../header/header';
 import RandomPlanet from '../random-planet/random-planet';
 import ErrorBoundry from '../error-boundry/error-boundry';
@@ -9,8 +9,6 @@ import StarshipsPage from '../pages/starships-page';
 import MyContext from '../swapi-service-context/swapi-service-context';
 import './app.css';
 import {Route, Routes} from 'react-router-dom';
-import StarshipDetails from "../sw-components/starship-details";
-import PersonDetails from "../sw-components/person-details";
 
 
 const App = () => {
@@ -20,7 +18,6 @@ const App = () => {
   return (
     <ErrorBoundry>
       <MyContext.Provider value={swapiService}>
-
         <div className="stardb-app">
           <Header/>
           <RandomPlanet/>

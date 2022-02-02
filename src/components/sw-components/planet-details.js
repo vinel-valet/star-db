@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
-import ItemDetails, { Record } from '../item-details/item-details';
+import React from 'react';
+import ItemDetails, {Record} from '../item-details/item-details';
 import withSwapiService from '../hoc-helpers/with-swapi-service';
-import {useParams} from "react-router-dom";
+
 
 const PlanetDetails = (props) => {
 
   return (
     <ItemDetails {...props}>
-      <Record field="population" label="Population" />
-      <Record field="rotationPeriod" label="Rotation Period" />
-      <Record field="diameter" label="Diameter" />
+      <Record field="population" label="Population"/>
+      <Record field="rotationPeriod" label="Rotation Period"/>
+      <Record field="diameter" label="Diameter"/>
     </ItemDetails>
   );
 };

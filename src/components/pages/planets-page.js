@@ -9,13 +9,13 @@ const PlanetsPage = () => {
   const navigate = useNavigate();
   const {id} = useParams();
 
-    return (
-      <Row
-        left={<PlanetList onItemSelected={(itemId) => navigate(`/planets/${itemId}`)} />}
-        right={<PlanetDetails itemId={id} />}
-      />
-    );
+  return (
+    <Row
+      left={<PlanetList onItemSelected={(itemId) => navigate(`/planets/${itemId}`)}/>}
+      right={<PlanetDetails itemId={id}/>}
+    />
+  );
 }
 
 
-export default  PlanetsPage;
+export default PlanetsPage;

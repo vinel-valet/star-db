@@ -1,5 +1,5 @@
 import React from 'react';
-import {PersonList, PlanetList} from '../sw-components/item-lists';
+import {PersonList} from '../sw-components/item-lists';
 import {useNavigate, useParams} from "react-router-dom";
 import Row from "../row/row";
 import PersonDetails from "../sw-components/person-details";
@@ -11,8 +11,8 @@ const PeoplePage = () => {
 
   return (
     <Row
-      left={<PersonList onItemSelected={(itemId) => navigate(`/people/${itemId}`)} />}
-      right={<PersonDetails itemId={id} />}
+      left={<PersonList onItemSelected={(itemId) => navigate(`/people/${itemId}`)}/>}
+      right={<PersonDetails itemId={id}/>}
     />
   );
 }

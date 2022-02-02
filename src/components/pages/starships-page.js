@@ -11,8 +11,8 @@ const StarshipsPage = () => {
 
   return (
     <Row
-      left={<StarshipList onItemSelected={(itemId) => navigate(`/starships/${itemId}`)} />}
-      right={<StarshipDetails itemId={id} />}
+      left={<StarshipList onItemSelected={(itemId) => navigate(`/starships/${itemId}`)}/>}
+      right={<StarshipDetails itemId={id}/>}
     />
   );
 }

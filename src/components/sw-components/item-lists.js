@@ -5,9 +5,9 @@ import withSwapiService from '../hoc-helpers/with-swapi-service';
 import withChildFunction from '../hoc-helpers/with-child-function';
 import compose from '../hoc-helpers/compose';
 
-const renderName = ({ name }) => <span>{name}</span>;
+const renderName = ({name}) => <span>{name}</span>;
 
-const renderModelAndName = ({ model, name}) => <span>{name} ({model})</span>;
+const renderModelAndName = ({model, name}) => <span>{name} ({model})</span>;
 
 const mapPersonMethodsToProps = (swapiService) => {
   return {

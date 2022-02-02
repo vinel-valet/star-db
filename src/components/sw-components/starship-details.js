@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ItemDetails, {Record} from '../item-details/item-details';
 import withSwapiService from '../hoc-helpers/with-swapi-service';
-import {useParams} from "react-router-dom";
+
 
 const StarshipDetails = (props) => {
 
